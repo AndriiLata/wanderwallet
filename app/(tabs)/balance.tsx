@@ -277,9 +277,9 @@ export default function BalanceTab() {
                 </>
             ) : (
                 <View style={styles.loginContainer}>
-                    <Text style={styles.text}>Enter Wallet Address</Text>
+                    <Text style={styles.title}>Enter Your Wallet Address</Text>
                     <TextInput
-                        style={styles.input}
+                        style={styles.Forma}
                         value={walletAddress}
                         onChangeText={setWalletAddress}
                         placeholder="e.g., 4f3s...8e9k"
@@ -298,6 +298,28 @@ export default function BalanceTab() {
 }
 
 const styles = StyleSheet.create({
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 20,
+      },
+    Forma: {
+        width: '80%',
+        height: 50,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        padding: 10,
+        fontSize: 18,
+        marginBottom: 20,
+        backgroundColor: '#fff',
+        borderRadius: 8,
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 4,
+        elevation: 2,
+        color: '#888',
+      },
     container: {
         flex: 1,
         backgroundColor: '#f9f9f9',
@@ -429,11 +451,13 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 24,
         borderRadius: 5,
+        marginLeft: 5,
+        marginRight: 5
     },
     loginButtonText: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 16,
+        fontSize: 18,
     },
     placeholderImage: {
         width: 100,

@@ -17,7 +17,7 @@ export default function MerchantScreen() {
   // Function to round the amount and trigger QR code generation
   const handleRoundAmount = () => {
     if (amount) {
-      const rounded = Math.ceil(parseFloat(amount)); // Round up to the nearest integer
+      const rounded = amount; // Round up to the nearest integer
       setRoundedAmount(rounded.toString());
       setShowQRCode(true); // Show the QR code after rounding
     }
@@ -25,12 +25,12 @@ export default function MerchantScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Enter Amount to Generate QR Code</Text>
+      <Text style={styles.title}>Enter Price to Generate QR Code</Text>
 
       {/* Input Field for Amount */}
       <TextInput
         style={styles.input}
-        placeholder="Enter amount"
+        placeholder="Enter amount of Solana"
         keyboardType="numeric"
         value={amount}
         onChangeText={(value) => {
@@ -40,14 +40,14 @@ export default function MerchantScreen() {
       />
 
       {/* Button to Round Amount */}
-      <TouchableOpacity style={styles.button} onPress={handleRoundAmount}>
-        <Text style={styles.buttonText}>Round Amount</Text>
+      <TouchableOpacity style={styles.actionButton} onPress={handleRoundAmount}>
+        <Text style={styles.actionButtonText}>Get QR Code</Text>
       </TouchableOpacity>
 
       {/* Display the Rounded Amount */}
       {roundedAmount && (
         <Text style={styles.roundedText}>
-          Rounded Amount: {roundedAmount} (used for QR Code)
+          Amount: {roundedAmount} SOL
         </Text>
       )}
 
@@ -61,7 +61,7 @@ export default function MerchantScreen() {
             backgroundColor="white"
           />
           <Text style={styles.qrText}>
-            Scan this QR Code to pay {roundedAmount}.
+            Scan this QR Code to pay.
           </Text>
         </View>
       ) : null}
@@ -90,7 +90,16 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     marginBottom: 20,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 2,
+    color: '#888',
   },
+
   button: {
     backgroundColor: '#007bff',
     padding: 15,
@@ -113,4 +122,20 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 16,
   },
+  actionButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginVertical: 20,
+  },
+  actionButton: {
+    backgroundColor: '#4caf50',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 5,
+  },
+  actionButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+},
 });

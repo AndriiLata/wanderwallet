@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import { Text, View, StyleSheet, Button, TouchableOpacity } from "react-native";
 import { CameraView, Camera } from "expo-camera";
 
 export default function App() {
@@ -37,7 +37,12 @@ export default function App() {
         style={StyleSheet.absoluteFillObject}
       />
       {scanned && (
-        <Button title={"Tap to Scan Again"} onPress={() => setScanned(false)} />
+                <TouchableOpacity
+                style={styles.AgainButton}
+                onPress={() => setScanned(false)}
+              >
+                <Text style={styles.buttonText}>Tap to Scan Again</Text>
+              </TouchableOpacity>
       )}
     </View>
   );
@@ -49,12 +54,18 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
   },
-  Button: {
-    color: 'rgb(0, 128, 0)', // Green color with transparency
+  AgainButton: {
+    backgroundColor: 'rgba(0, 128, 0, 0.7)', // Green color with transparency
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginTop: 20,
+    alignItems: 'center',
+    height: 100
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: 'bold',
   },
 });

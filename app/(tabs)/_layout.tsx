@@ -7,21 +7,21 @@ export default function TabLayout() {
       <Tabs.Screen
         name="camera"
         options={{
-          title: 'Camera',
+          title: 'Wander Wallet',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="camera" color={color} />,
         }}
       />
       <Tabs.Screen
         name="balance"
         options={{
-          title: 'Balance',
+          title: 'Wander Wallet',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
         }}
       />
       <Tabs.Screen
         name="generate"
         options={{
-          title: 'Generate',
+          title: 'Wander Wallet',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="image" color={color} />,
         }}
       />
