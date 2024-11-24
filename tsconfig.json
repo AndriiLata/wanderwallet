@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/(tabs)/generate.js", "app/(tabs)/camera.js", "app/(tabs)/scanner/Overlay.js"  ]
 }
